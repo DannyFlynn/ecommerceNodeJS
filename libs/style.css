@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.shop-wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    width: 100%;
+    min-height: 10%;
+    background-color: red;
+    color: white;
+    display: flex;
+}
+
+.brand-container {
+    width: 60%;
+    height: 100%;
+}
+
+.brand-title {
+    font-size: 22px;
+    padding: 5px;
+}
+
+
+.links-big-screen {
+    width: 40%;
+    height: 100%;
+    text-align: right;
+}
+
+.fa-cart-shopping {
+    padding: 20px;
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.main-content-hide {
+    display: none;
+
+}
+
+.item-container {
+    width: 100%;
+    height: 250px;
+    margin: 10px 0 0 0;
+   
+}
+
+.pizza-img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.pizza-img {
+    width: 50%;
+}
+
+.pizza-title {
+    width: 100%;
+    height: 90px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-pizza {
+    width: 100px;
+    height: 30px;
+    background-color: #0275d8;
+    color: white;
+    border: white;
+    border-radius: 5px;
+}
+
+/*cart */
+
+.cart-wrapper-hide {
+    display: none;
+}
+
+.cart-wrapper-show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 90%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cart-pizzas-wrap,
+.cart-pizzas-total {
+    width: 65%;
+    min-height: 80px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+.cart-pizzas-total {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: none;
+}
+
+.buy-now-btn, .checkout-order-btn, .cash-order-success {
+    width: 100px;
+    height: 30px;
+    background-color: #0275d8;
+    color: white;
+    border: white;
+    border-radius: 5px;
+}
+
+.clear-now-btn, .cancel-order-btn, #cancelOrder {
+    width: 100px;
+    height: 30px;
+    background-color: #d9534f;
+    color: white;
+    border: white;
+    border-radius: 5px;
+}
+
+.pizza-info {
+    min-height: 40px;
+}
+
+.add-or-minus-pizza {
+    /*display: flex;
+    justify-content: space-evenly;*/
+    min-height: 40px;
+}
+
+.minus-pizza-cart {
+    width: 70px;
+    height: 30px;
+    background-color: #d9534f;
+    color: white;
+    border: white;
+    border-radius: 5px;
+}
+
+.quantity {
+    font-size: 18px;
+}
+
+.add-pizza-cart {
+    width: 70px;
+    height: 30px;
+    background-color: #5cb85c;
+    color: white;
+    border: white;
+    border-radius: 5px;
+}
+
+
+.cart-wrapper-hide {
+    display: none;
+}
+
+/* after customer has chose an order they will input details css below */
+.customer-details-hide {
+    display: none;
+}
+
+.customer-details-show {
+    width: 100%;
+    min-height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+   
+}
+
+.order-number-wrapper {
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.customer-info {
+    width: 100%;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.inp-text-fields {
+    width: 75%;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 15px;
+}
+
+.cash-card-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.checkout-order {
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+/* end of customer input */
+
+/* cash payment */
+
+.cash-wrapper-hide, .cash-wrapper-hide {
+    display: none;
+}
+
+.cash-wrapper, .card-wrapper {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+#cashDeliveryInfo {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* end of cash payemnt */
+
+
+@media only screen and (min-width: 486px) and (max-width: 750px) {
+
+  .item-container {
+    height: 350px;
+  }
+}
+
+@media only screen and (min-width: 751px) and (max-width: 985px) {
+    
+    .main-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .item-container {
+        width: 48%;
+        height: 250px;
+        border: 2px dotted black;
+        border-radius: 10px;
+        margin: 25px 0 0 0;
+    }
+    
+    .cart-pizzas-wrap {
+       width: 40%;
+       margin: 15px 0 0 0;
+    }
+
+    .customer-info {
+        width: 70%;
+    }
+
+    .customer-details-show {
+        margin: 10px;
+    }
+
+}
+
+@media only screen and (min-width: 986px) and (max-width: 1200px) {
+    .main-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .item-container {
+        width: 31%;
+        height: 250px;
+        border: 2px dotted black;
+        border-radius: 10px;
+        margin: 25px 0 0 0;
+    }
+
+    .pizza-title {
+        margin: 15px 0 0 0;
+    }
+
+    .cart-pizzas-wrap {
+        width: 40%;
+        min-height: 90px;
+        margin: 25px 0 0 0;
+        border: 2px dotted black;
+    }
+
+    .pizza-info {
+        margin: 5px;
+    }
+
+    .customer-info {
+        width: 70%;
+    }
+
+    .customer-details-show {
+        margin: 10px;
+    }
+
+    
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+   
+    .main-content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    
+        .item-container {
+            width: 31%;
+            height: 250px;
+            border: 2px dotted black;
+            border-radius: 10px;
+            margin: 25px 0 0 0;
+        }
+
+        .customer-info {
+            width: 50%;
+            margin: 20px 0 0 0;
+        }
+
+        .customer-details-show {
+            margin: 10px;
+            overflow: auto;
+        }
+ 
+      
+}

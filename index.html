@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eccomerce</title>
+    <script
+      src="https://kit.fontawesome.com/b621fdb088.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./libs/style.css" />
+  </head>
+  <body>
+    <div class="shop-wrapper">
+      <!--Header & Navigation-->
+      <nav>
+        <div class="brand-container">
+          <h3 class="brand-title">PizzaTime</h3>
+        </div>
+        <div class="links-big-screen">
+          <i class="fa-solid fa-cart-shopping fa-lg" id="basket"></i>
+        </div>
+      </nav>
+      <!--End of Header And Naviagtion-->
+
+      <!--Cash payment wrapper-->
+      <div class="cash-wrapper-hide">
+        <div id="cashDeliveryInfo"></div>
+        <button class="cash-order-success orderSuccess">Exit</button>
+      </div>
+
+      <!---->
+
+      <!--customer order number details after pizza selection-->
+      <div class="customer-details-hide" id="customerInfo">
+        <div class="order-number-wrapper">
+          <p>order-number:&nbsp;<span id="customerOrderNo"></span></p>
+          <button class="cancel-order-btn" id="deleteOrder">
+            Cancel-Order
+          </button>
+        </div>
+        <div class="customer-info">
+          <input
+            class="inp-text-fields"
+            type="text"
+            placeholder="FullName"
+            id="fullname"
+          />
+          <input
+            class="inp-text-fields"
+            type="text"
+            placeholder="Address"
+            id="address"
+          />
+          <input
+            class="inp-text-fields"
+            type="text"
+            placeholder="@Email"
+            id="email"
+          />
+        </div>
+        <div class="cash-card-wrapper">
+          <div>Card <input type="checkbox" id="card" /></div>
+          <div>
+            Cash
+            <input type="checkbox" id="cash" />
+          </div>
+        </div>
+        <div class="checkout-order">
+          <button class="checkout-order-btn" id="checkout">Checkout</button>
+        </div>
+      </div>
+      <!--customer order end-->
+
+      <!--div beneath shows when user clicks the basket/trolleys-->
+      <div class="cart-wrapper-hide">
+        <div class="cart-pizzas-total">
+          <div class="total-info">
+            <p>Total:&nbsp; £<span id="totalPrice">0</span></p>
+          </div>
+          <div class="total-clear">
+            <button class="buy-now-btn" id="buyBtn">Continue</button>
+            <button class="clear-now-btn" id="clearBasket">Clear</button>
+          </div>
+        </div>
+        <div class="cart-pizzas-wrap">
+          <div class="pizza-info">
+            <p>Margerita&nbsp;</p>
+          </div>
+          <div class="add-or-minus-pizza">
+            <button
+              class="minus-pizza-cart"
+              onclick="decrement('margeritaQuantity')"
+            >
+              minus
+            </button>
+            <span class="quantity" id="margeritaQuantity">0</span>
+            <button
+              class="add-pizza-cart"
+              onclick="increment('margeritaQuantity')"
+            >
+              add
+            </button>
+          </div>
+        </div>
+        <div class="cart-pizzas-wrap">
+          <div class="pizza-info">
+            <p>Pepperoni&nbsp;</p>
+          </div>
+          <div class="add-or-minus-pizza">
+            <button
+              class="minus-pizza-cart"
+              onclick="decrement('pepperoniQuantity')"
+            >
+              minus
+            </button>
+            <span class="quantity" id="pepperoniQuantity">0</span>
+            <button
+              class="add-pizza-cart"
+              onclick="increment('pepperoniQuantity')"
+            >
+              add
+            </button>
+          </div>
+        </div>
+        <div class="cart-pizzas-wrap">
+          <div class="pizza-info">
+            <p>Veggie Surpreme&nbsp;</p>
+          </div>
+          <div class="add-or-minus-pizza">
+            <button
+              class="minus-pizza-cart"
+              onclick="decrement('veggieSurpremeQuantity')"
+            >
+              minus
+            </button>
+            <span class="quantity" id="veggieSurpemeQuantity">0</span>
+            <button
+              class="add-pizza-cart"
+              onclick="increment('veggieSurpremeQuantity')"
+            >
+              add
+            </button>
+          </div>
+        </div>
+        <div class="cart-pizzas-wrap">
+          <div class="pizza-info">
+            <p>Texas bbq&nbsp;</p>
+          </div>
+          <div class="add-or-minus-pizza">
+            <button
+              class="minus-pizza-cart"
+              onclick="decrement('texasBbqQuantity')"
+            >
+              minus
+            </button>
+            <span class="quantity" id="texasQuantity">0</span>
+            <button
+              class="add-pizza-cart"
+              onclick="increment('texasBbqQuantity')"
+            >
+              add
+            </button>
+          </div>
+        </div>
+        <div class="cart-pizzas-wrap">
+          <div class="pizza-info">
+            <p>MeatFeast&nbsp;</p>
+          </div>
+          <div class="add-or-minus-pizza">
+            <button
+              class="minus-pizza-cart"
+              onclick="decrement('meatFeastQuantity')"
+            >
+              minus
+            </button>
+            <span class="quantity" id="meatFeast">0</span>
+            <button
+              class="add-pizza-cart"
+              onclick="increment('meatFeastQuantity')"
+            >
+              add
+            </button>
+          </div>
+        </div>
+        <div class="cart-pizzas-wrap">
+          <div class="pizza-info">
+            <p>Ham & Pineapple&nbsp;</p>
+          </div>
+          <div class="add-or-minus-pizza">
+            <button
+              class="minus-pizza-cart"
+              onclick="decrement('hamPineappleQuantity')"
+            >
+              minus
+            </button>
+            <span class="quantity" id="hamPineapple">0</span>
+            <button
+              class="add-pizza-cart"
+              onclick="increment('hamPineappleQuantity')"
+            >
+              add
+            </button>
+          </div>
+        </div>
+        <div class="cart-pizzas-wrap">
+          <div class="pizza-info">
+            <p>Farmhouse&nbsp;</p>
+          </div>
+          <div class="add-or-minus-pizza">
+            <button
+              class="minus-pizza-cart"
+              onclick="decrement('farmhouseQuantity')"
+            >
+              minus
+            </button>
+            <span class="quantity" id="farmhouse">0</span>
+            <button
+              class="add-pizza-cart"
+              onclick="increment('farmhouseQuantity')"
+            >
+              add
+            </button>
+          </div>
+        </div>
+        <div class="cart-pizzas-wrap">
+          <div class="pizza-info">
+            <p>Bean Surpreme&nbsp;</p>
+          </div>
+          <div class="add-or-minus-pizza">
+            <button
+              class="minus-pizza-cart"
+              onclick="decrement('beanSurpremeQuantity')"
+            >
+              minus
+            </button>
+            <span class="quantity" id="beanSurpreme">0</span>
+            <button
+              class="add-pizza-cart"
+              onclick="increment('beanSurpremeQuantity')"
+            >
+              add
+            </button>
+          </div>
+        </div>
+        <div class="cart-pizzas-wrap">
+          <div class="pizza-info">
+            <p>Gravy Volcano&nbsp;</p>
+          </div>
+          <div class="add-or-minus-pizza">
+            <button
+              class="minus-pizza-cart"
+              onclick="decrement('gravyVolcanoQuantity')"
+            >
+              minus
+            </button>
+            <span class="quantity" id="gravyVolcano">0</span>
+            <button
+              class="add-pizza-cart"
+              onclick="increment('gravyVolcanoQuantity')"
+            >
+              add
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--End of basket-->
+
+      <!--pizzas-->
+      <main class="main-content">
+        <div class="item-container">
+          <div class="pizza-img-container">
+            <img src="./libs/images/Pizza.jpg" class="pizza-img" alt="pizza" />
+          </div>
+          <div class="pizza-title">
+            <h5>Margerita</h5>
+            <p>£12</p>
+            <button class="add-pizza" onclick="addPizza(12, 'Margerita')">
+              Add
+            </button>
+          </div>
+        </div>
+        <div class="item-container">
+          <div class="pizza-img-container">
+            <img src="./libs/images/Pizza.jpg" class="pizza-img" alt="pizza" />
+          </div>
+          <div class="pizza-title">
+            <h5>Pepperoni</h5>
+            <p>£10</p>
+            <button class="add-pizza" onclick="addPizza(10, 'Pepperoni')">
+              Add
+            </button>
+          </div>
+        </div>
+        <div class="item-container">
+          <div class="pizza-img-container">
+            <img src="./libs/images/Pizza.jpg" alt="pizza" class="pizza-img" />
+          </div>
+          <div class="pizza-title">
+            <h5>Veggie Surpreme</h5>
+            <p>£9</p>
+            <button class="add-pizza" onclick="addPizza(9, 'Veggie Surpreme')">
+              Add
+            </button>
+          </div>
+        </div>
+        <div class="item-container">
+          <div class="pizza-img-container">
+            <img src="./libs/images/Pizza.jpg" alt="pizza" class="pizza-img" />
+          </div>
+          <div class="pizza-title">
+            <h5>Texas bbq</h5>
+            <p>£14</p>
+            <button class="add-pizza" onclick="addPizza(14, 'Texas bbq')">
+              Add
+            </button>
+          </div>
+        </div>
+        <div class="item-container">
+          <div class="pizza-img-container">
+            <img src="./libs/images/Pizza.jpg" alt="pizza" class="pizza-img" />
+          </div>
+          <div class="pizza-title">
+            <h5>MeatFeast</h5>
+            <p>£15</p>
+            <button class="add-pizza" onclick="addPizza(15, 'MeatFeast')">
+              Add
+            </button>
+          </div>
+        </div>
+        <div class="item-container">
+          <div class="pizza-img-container">
+            <img src="./libs/images/Pizza.jpg" alt="pizza" class="pizza-img" />
+          </div>
+          <div class="pizza-title">
+            <h5>Ham & Pineapple</h5>
+            <p>£8</p>
+            <button class="add-pizza" onclick="addPizza(8, 'Ham & Pineapple')">
+              Add
+            </button>
+          </div>
+        </div>
+        <div class="item-container">
+          <div class="pizza-img-container">
+            <img src="./libs/images/Pizza.jpg" alt="pizza" class="pizza-img" />
+          </div>
+          <div class="pizza-title">
+            <h5>Farmhouse</h5>
+            <p>£10</p>
+            <button class="add-pizza" onclick="addPizza(10, 'Farmhouse')">
+              Add
+            </button>
+          </div>
+        </div>
+        <div class="item-container">
+          <div class="pizza-img-container">
+            <img src="./libs/images/Pizza.jpg" alt="pizza" class="pizza-img" />
+          </div>
+
+          <div class="pizza-title">
+            <h5>Bean Supreme</h5>
+            <p>£12</p>
+            <button class="add-pizza" onclick="addPizza(12, 'Bean Supreme')">
+              Add
+            </button>
+          </div>
+        </div>
+        <div class="item-container">
+          <div class="pizza-img-container">
+            <img src="./libs/images/Pizza.jpg" alt="pizza" class="pizza-img" />
+          </div>
+          <div class="pizza-title">
+            <h5>Gravy Volcano</h5>
+            <p>£9</p>
+            <button class="add-pizza" onclick="addPizza(9, 'Gravy Volcano')">
+              Add
+            </button>
+          </div>
+        </div>
+      </main>
+      <!--end of main content (pizzas)-->
+    </div>
+    <script src="./libs/app.js"></script>
+  </body>
+</html>
